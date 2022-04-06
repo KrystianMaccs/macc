@@ -10,6 +10,6 @@ class CategoryView(generics.ListAPIView):
 
 
 class ProjectDetailView(generics.RetrieveAPIView):
-    queryset = Project.objects.all()
+    queryset = Project.objects.get()
     serializer_class = ProjectSerializer
     permission_classes = [IsAdminUser]
