@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('maccs/', admin.site.urls),
-    path('', include("apps.portfolio.urls"))
+    path("", include("apps.home.urls")),
+    path("portfolio/", include("apps.portfolio.urls")),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
