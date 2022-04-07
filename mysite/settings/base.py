@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = [
     "djoser",
     "rest_framework_simplejwt",
     "djcelery_email",
+    "drf_yasg",
 ]
 
 LOCAL_APPS = [

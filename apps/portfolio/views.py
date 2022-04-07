@@ -2,6 +2,7 @@ from .models import Category, Project
 from .serializers import CategorySerializer, ProjectSerializer
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
+from drf_yasg.utils import swagger_auto_schema
 
 
 class CategoryCreateView(generics.CreateAPIView):
