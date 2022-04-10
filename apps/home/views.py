@@ -56,9 +56,4 @@ class WorkDeleteView(generics.DestroyAPIView):
 class ContactCreateView(generics.CreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    permission_classes = [IsAdminUser]
-
-class MyContactCreateView(generics.CreateAPIView):
-    queryset = MyContact.objects.all()
-    serializer_class = MyContactSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = []

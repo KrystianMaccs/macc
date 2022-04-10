@@ -10,8 +10,9 @@ from django.utils.translation import gettext_lazy as _
 class PersonalInfo(TimeStampedUUIDModel):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=25)
+    phone = PhoneNumberField(default=+2348037286666)
     email = models.EmailField(max_length=80)
+    address = models.CharField(max_length=180)
     image = models.ImageField(upload_to="mediafiles/", null=False, blank=False)
     resume = models.FileField(upload_to="mediafiles/", null=False, blank=False)
 
@@ -36,11 +37,4 @@ class Contact(TimeStampedUUIDModel):
     full_name = models.CharField(max_length=120)
     subject = models.CharField(max_length=120)
     message = models.TextField(default="Send me a message")
-
-
-class MyContact(TimeStampedUUIDModel):
-    phone_number = PhoneNumberField()
-    email = models.EmailField(max_length=120)
-    address = models.CharField(max_length=150)
-
 

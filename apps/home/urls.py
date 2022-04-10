@@ -1,16 +1,5 @@
 from django.urls import path
-from apps.home.views import (
-    PersonalInfoCreateView,
-    PersonalInfoListView,
-    PersonalInfoEditView, 
-    PersonalInfoDeleteView, 
-    WorkCreateView, 
-    WorkListView, 
-    WorkEditView, 
-    WorkDeleteView,
-    ContactCreateView,
-    MyContactCreateView
-)
+from .views import *
 
 urlpatterns = [
     path("krystian", PersonalInfoListView.as_view()),
@@ -22,5 +11,4 @@ urlpatterns = [
     path("work/<int:pk>", WorkEditView.as_view()),
     path("work/<int:pk>/delete", WorkDeleteView.as_view()),
     path("contact", ContactCreateView.as_view()),
-    path("my-contact", MyContactCreateView.as_view()),
 ]

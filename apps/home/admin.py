@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.home.models import PersonalInfo, Work, Contact, MyContact
+from apps.home.models import PersonalInfo, Work, Contact
 
 
 class PersonalInfoAdmin(admin.ModelAdmin):
@@ -14,11 +14,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('subject',)
 
 
-class MyContactAdmin(admin.ModelAdmin):
-    list_display = ('phone_number', 'email', 'address')
-
 
 admin.site.register(PersonalInfo, PersonalInfoAdmin)
 admin.site.register(Contact, ContactAdmin)
-admin.site.register(MyContact, MyContactAdmin)
 admin.site.register(Work, WorkAdmin)
