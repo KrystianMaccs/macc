@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.home.models import PersonalInfo, Work, Contact, MyContact
+from apps.home.models import PersonalInfo, Work, Contact
 
 
 class PersonalInfoSerializer(serializers.ModelSerializer):

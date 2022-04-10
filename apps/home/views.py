@@ -6,9 +6,8 @@ from apps.home.serializers import (
     PersonalInfoSerializer,
     WorkSerializer,
     ContactSerializer,
-    MyContactSerializer,
     )
-from apps.home.models import PersonalInfo, Work, Contact, MyContact
+from apps.home.models import PersonalInfo, Work, Contact
 
 
 class PersonalInfoCreateView(generics.CreateAPIView):
