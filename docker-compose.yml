@@ -18,7 +18,7 @@ services:
             - postgres-db
             - redis
         networks:
-            - estate-react
+            - mysite
 
     client:
         build:
@@ -29,10 +29,10 @@ services:
             - ./client:/app
             - /app/node_modules
         networks:
-            - estate-react
+            - mysite
 
     postgres-db:
-        image: postgres:12.0-alpine
+        image: postgres:14.0-alpine
         ports:
             - "5432:5432"
         volumes:
@@ -42,12 +42,12 @@ services:
             - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
             - POSTGRES_DB=${POSTGRES_DB}
         networks:
-            - estate-react
+            - mysite
 
     redis:
         image: redis:5-alpine
         networks:
-            - estate-react
+            - mysite
 
     celery_worker:
         build:
@@ -62,7 +62,7 @@ services:
             - redis
             - postgres-db
         networks:
-            - estate-react
+            - mysite
 
     flower:
         build:
@@ -79,7 +79,7 @@ services:
             - redis
             - postgres-db
         networks:
-            - estate-react
+            - mysite
 
     nginx:
         restart: always

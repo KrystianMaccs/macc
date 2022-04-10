@@ -1,4 +1,5 @@
 import environ
+import os
 env = environ.Env(DEBUG=(bool,False))
 
 from pathlib import Path
@@ -44,6 +45,7 @@ THIRD_PARTY_APPS = [
     "rest_framework_simplejwt",
     "djcelery_email",
     "drf_yasg",
+    "corsheaders",
 ]
 
 LOCAL_APPS = [
@@ -65,6 +67,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -72,7 +79,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'client/build')
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
