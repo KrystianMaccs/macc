@@ -1,11 +1,20 @@
-import { Component } from 'react';
+import React, { Component } from 'react'
 
-class HelloWorldClassComponent extends Component {
+class Hello extends Component {
   render() {
     return (
-    <h1>Hello, World!</h1>
+    <div className='container'>
+      <div className='navbar'>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
     )
   }
 }
 
-export default HelloWorldClassComponent
+export default Hello
