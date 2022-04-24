@@ -7,3 +7,5 @@ class HelloWorldClassComponent extends Component {
     )
   }
 }
+
+export default HelloWorldClassComponent
