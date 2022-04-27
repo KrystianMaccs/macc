@@ -1,4 +1,5 @@
 from django.db import models
+
 from apps.common.models import TimeStampedUUIDModel
 
 
@@ -15,11 +16,12 @@ class Category(TimeStampedUUIDModel):
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
+
 class Project(TimeStampedUUIDModel):
     title = models.CharField(max_length=30, verbose_name="Title")
     description = models.TextField()
     url = models.URLField()
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     img = models.ImageField(upload_to="mediafiles/", default="mediafiles/")
 
     def __str__(self):
