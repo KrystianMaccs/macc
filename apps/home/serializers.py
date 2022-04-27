@@ -6,7 +6,7 @@ from apps.home.models import PersonalInfo, Skill
 class PersonalInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PersonalInfo
-        fields = "__all__"
+        fields = ["first_name", "last_name", "phone", "email", "address", "resume"]
 
 
 class SkillSerializer(serializers.ModelSerializer):

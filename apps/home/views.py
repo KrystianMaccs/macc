@@ -4,13 +4,13 @@ from rest_framework import generics, permissions
 from rest_framework.permissions import IsAdminUser
 
 from apps.home.models import PersonalInfo, Skill
-from apps.home.serializers import PersonalInfoSerializer, WorkSerializer
+from apps.home.serializers import PersonalInfoSerializer, SkillSerializer
 
 
 class PersonalInfoListView(generics.ListAPIView):
     queryset = PersonalInfo.objects.all()
     serializer_class = PersonalInfoSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]
 
 
 class PersonalInfoRUDView(generics.RetrieveUpdateDestroyAPIView):
@@ -22,7 +22,7 @@ class PersonalInfoRUDView(generics.RetrieveUpdateDestroyAPIView):
 class SkillListView(generics.ListAPIView):
     queryset = Skill.objects.all()
     serializer_class = SkillSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [permissions.AllowAny]
 
 
 class SkillListView(generics.RetrieveUpdateDestroyAPIView):
