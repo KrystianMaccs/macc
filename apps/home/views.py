@@ -1,56 +1,33 @@
 from django.shortcuts import render
-from rest_framework import generics 
-from rest_framework.permissions import IsAdminUser
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework import generics, permissions
+from rest_framework.permissions import IsAdminUser
+
+from apps.home.models import Contact, PersonalInfo, Work
 from apps.home.serializers import (
+    ContactSerializer,
     PersonalInfoSerializer,
     WorkSerializer,
-    ContactSerializer,
-    )
-from apps.home.models import PersonalInfo, Work, Contact
+)
 
-
-class PersonalInfoCreateView(generics.CreateAPIView):
-    queryset = PersonalInfo.objects.all()
-    serializer_class = PersonalInfoSerializer
-    permission_classes = [IsAdminUser]
 
 class PersonalInfoListView(generics.ListAPIView):
     queryset = PersonalInfo.objects.all()
     serializer_class = PersonalInfoSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
 
 
-class PersonalInfoEditView(generics.RetrieveUpdateAPIView):
+class PersonalInfoRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = PersonalInfo.objects.all()
     serializer_class = PersonalInfoSerializer
     permission_classes = [IsAdminUser]
 
-class PersonalInfoDeleteView(generics.DestroyAPIView):
-    queryset = PersonalInfo.objects.all()
-    serializer_class = PersonalInfoSerializer
-    permission_classes = [IsAdminUser]
-
-
-class WorkCreateView(generics.CreateAPIView):
-    queryset = Work.objects.all()
-    serializer_class = WorkSerializer
-    permission_classes = [IsAdminUser]
 
 class WorkListView(generics.ListAPIView):
     queryset = Work.objects.all()
     serializer_class = WorkSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
 
-class WorkEditView(generics.RetrieveUpdateAPIView):
-    queryset = Work.objects.all()
-    serializer_class = WorkSerializer
-    permission_classes = [IsAdminUser]
-
-class WorkDeleteView(generics.DestroyAPIView):
-    queryset = Work.objects.all()
-    serializer_class = WorkSerializer
-    permission_classes = [IsAdminUser]
 
 class ContactCreateView(generics.CreateAPIView):
     queryset = Contact.objects.all()
