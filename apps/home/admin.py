@@ -1,20 +1,15 @@
 from django.contrib import admin
-from apps.home.models import PersonalInfo, Work, Contact
+
+from apps.home.models import PersonalInfo, Skill
 
 
 class PersonalInfoAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone', 'resume')
-
-    
-class WorkAdmin(admin.ModelAdmin):
-    list_display =('title', )
+    list_display = ("first_name", "last_name", "email", "phone", "resume")
 
 
-class ContactAdmin(admin.ModelAdmin):
-    list_display = ('subject',)
-
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ("title",)
 
 
 admin.site.register(PersonalInfo, PersonalInfoAdmin)
-admin.site.register(Contact, ContactAdmin)
-admin.site.register(Work, WorkAdmin)
+admin.site.register(Skill, SkillAdmin)

@@ -3,12 +3,8 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, permissions
 from rest_framework.permissions import IsAdminUser
 
-from apps.home.models import Contact, PersonalInfo, Work
-from apps.home.serializers import (
-    ContactSerializer,
-    PersonalInfoSerializer,
-    WorkSerializer,
-)
+from apps.home.models import PersonalInfo, Skill
+from apps.home.serializers import PersonalInfoSerializer, WorkSerializer
 
 
 class PersonalInfoListView(generics.ListAPIView):
@@ -23,13 +19,13 @@ class PersonalInfoRUDView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAdminUser]
 
 
-class WorkListView(generics.ListAPIView):
-    queryset = Work.objects.all()
-    serializer_class = WorkSerializer
+class SkillListView(generics.ListAPIView):
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
     permission_classes = [AllowAny]
 
 
-class ContactCreateView(generics.CreateAPIView):
-    queryset = Contact.objects.all()
-    serializer_class = ContactSerializer
-    permission_classes = []
+class SkillListView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
+    permission_classes = [IsAdminUser]

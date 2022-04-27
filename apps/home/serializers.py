@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from apps.home.models import PersonalInfo, Work, Contact
+
+from apps.home.models import PersonalInfo, Skill
 
 
 class PersonalInfoSerializer(serializers.ModelSerializer):
@@ -8,12 +9,7 @@ class PersonalInfoSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class WorkSerializer(serializers.ModelSerializer):
+class SkillSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Work
-        fields = "__all__"
-
-class ContactSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Contact
+        model = Skill
         fields = "__all__"
