@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Logo from './Components/Header/Logo';
-import Menu from './Components/Header/Menu';
+import Logo from './Components/Header';
+import Menu from './Components/Menu';
 
 class Header extends Component (){
     render (){
