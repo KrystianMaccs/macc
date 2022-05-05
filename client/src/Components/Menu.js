@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../navbar.css";
 
 class Menu extends Component() {
   render (){
@@ -15,4 +14,4 @@ class Menu extends Component() {
   }
 }
 
-export default Menu
+export default Menu;
