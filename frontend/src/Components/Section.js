@@ -4,7 +4,7 @@ import Social from '../Components/Social';
 
 const Section = () => {
     return ( 
-        <div className='home container'>
+        <div className="home container home">
             <div className='home-content'>
                 <ProfileImg />
                 <Greet />
