@@ -275,3 +275,8 @@ header {
   text-align: justify;
   margin-bottom: 1.5rem;
 }
+
+.services-content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
