@@ -28,8 +28,8 @@ urlpatterns = [
     ),
     url("redocs/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
     path("maccs/", admin.site.urls),
-    path("home/", include("apps.home_router.urls")),
-    path("portfolio/", include("apps.portfolio_router.urls")),
+    path("home/", include("apps.home.urls")),
+    path("portfolio/", include("apps.portfolio.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
